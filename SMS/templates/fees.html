@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Record Fee Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Record Fee Payment</h1>
+    <form method="POST">
+        <label>Admission No:</label><input type="text" name="admission_no" required><br>
+        <label>Amount Paid:</label><input type="number" step="0.01" name="amount" required><br>
+        <input type="submit" value="Record Payment">
+    </form>
+    <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html>

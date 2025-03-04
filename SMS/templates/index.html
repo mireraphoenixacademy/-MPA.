@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mirera Phoenix Academy SMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Mirera Phoenix Academy - School Management System</h1>
+    <div>
+        <a href="{{ url_for('admit_learner') }}">Admit New Learner</a> |
+        <a href="{{ url_for('manage_fees') }}">Record Fee Payment</a> |
+        <a href="{{ url_for('manage_books') }}">Update Book Inventory</a>
+    </div>
+
+    <h2>Learners</h2>
+    <table>
+        <tr><th>Admission No</th><th>Name</th><th>Grade</th><th>Fees Due</th><th>Date Admitted</th></tr>
+        {% for learner in learners %}
+        <tr>
+            <td>{{ learner[0] }}</td>
+            <td>{{ learner[1] }}</td>
+            <td>{{ learner[2] }}</td>
+            <td>{{ learner[3] }}</td>
+            <td>{{ learner[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Book Inventory</h2>
+    <table>
+        <tr><th>Grade</th><th>Book Count</th></tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book[0] }}</td>
+            <td>{{ book[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

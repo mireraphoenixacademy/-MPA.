@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admit Learner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Admit New Learner</h1>
+    <form method="POST">
+        <label>Name:</label><input type="text" name="name" required><br>
+        <label>Grade:</label><input type="text" name="grade" required><br>
+        <label>Fees Due:</label><input type="number" step="0.01" name="fees_due" required><br>
+        <input type="submit" value="Admit">
+    </form>
+    <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html>
